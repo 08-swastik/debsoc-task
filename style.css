@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap'); */
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    background: #dee1e2;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200 !important;
+    padding-top: 100px;
+}
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #ffff;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 15px 15px rgba(0,0,0,0.05);
+}
+.navigation
+{
+    color: #333;
+    text-decoration: none;
+    font-size: 1.5em;
+    /* font-weight: 700; */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-right: -50px;
+    margin-top: -5px;
+    
+}
+.navigation li a{
+    text-decoration: none;
+}
+.logo1{
+    margin-right: 375px;
+    margin-top: 10px;
+    width: 170px;
+}
+.group
+{
+    display: flex;
+    align-items: center;
+}
+header ul
+{
+    position: relative;
+    display: flex;
+    gap: 30px;
+}
+header ul li
+{ 
+    list-style: none;
+}
+header ul li a
+{   
+    position: relative;
+    text-decoration: none;
+    font-size: 0.8em;
+    /* font-weight: bolder; */
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+header ul li ::before
+{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: #333;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+    transform-origin: right;
+}
+header ul li a:hover::before
+{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+header .search
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    z-index: 10;
+    cursor: pointer;
+}
+.searchBox
+{
+    position: absolute;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background:#fff;
+    align-items: center;
+    padding: 0 30px;
+    transition: 0.5s ease-in-out;    
+}
+.searchBox.active{
+    right: 0;
+}
+.searchBox input
+{
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 50px;
+    color: #333;
+    font-size: 1.25em;
+    background: #fff;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.searchBtn{
+    position: relative;
+    left: 30px;
+    top: 2.5px;
+    transition: 0.5s ease-in-out;
+}
+.searchBtn.active{
+    left: 0;
+}
+.closeBtn
+{
+ opacity: 0;
+ visibility: hidden;
+ transition: 0.5s;
+ scale: 0;
+}
+.closeBtn.active 
+{
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s;
+    scale: 1;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px; 
+    position: relative;
+    margin-bottom: 20px;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+    box-shadow: 0px 0px 10px 2px #999;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  
+.flip-card-back {
+    /* margin: 7px 0;
+      margin-top: 7px;
+      margin-right: 0px;
+      margin-bottom: 7px;
+      margin-left: 0px; */
+      padding: 1em;
+    /* font-weight: 700;   */
+    height: clamp(28px,4.3vw,62px);
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: clamp(12px,1.6vw,20px);
+    width: clamp(200px,17.9vw,258px);
+    background-color: #fff;
+    width:300px;
+    height: 300px;
+    color: black;
+    transform: rotateY(180deg);
+  }
+  
+.flip-card-back .explain {
+    font-size: 0.65em;
+    text-align: justify;
+}
+
+.flip-card-back h3 {
+    /* font-weight: bolder; */
+    flex-grow: 1;
+    justify-self: flex-start;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+}
